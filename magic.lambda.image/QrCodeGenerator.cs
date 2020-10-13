@@ -41,6 +41,8 @@ namespace magic.lambda.image
                             // Intentionally NOT disposing stream, it's anyways a MemoryStream
                             var stream = new MemoryStream();
                             bmp.Save(stream, ImageFormat.Png);
+                            stream.Flush();
+                            stream.Position = 0;
                             input.Value = stream;
                         }
                     }
