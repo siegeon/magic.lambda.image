@@ -20,6 +20,8 @@ namespace magic.lambda.image.tests
         {
             var lambda = Common.Evaluate("qr.generate:foo-bar\r\n   size:4");
             Assert.True(lambda.Children.First().Value is Stream);
+            var stream = lambda.Children.First().Value as Stream;
+            Assert.True(stream.Length > 5);
         }
     }
 }
