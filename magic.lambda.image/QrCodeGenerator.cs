@@ -5,7 +5,6 @@
 
 using System.IO;
 using System.Linq;
-using System.Drawing.Imaging;
 using QRCoder;
 using magic.node;
 using magic.node.extensions;

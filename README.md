@@ -4,6 +4,12 @@
 Image manipulation library for Magic, allowing you to do basic manipulation of images, in addition to
 generating QR codes.
 
+## Generating a QR code
+
+You can use the **[qr.generate]** slot to create a QR code. This slow returns the QR code as a `MemoryStream`, which
+allows you to return its output directly over the HTTP response object, which again will persist the QR code
+back as the response to the caller if you're in a web project of some sort using Magic.
+
 ## Quality gates
 
 - [![Build status](https://travis-ci.com/polterguy/magic.lambda.image.svg?master)](https://travis-ci.com/polterguy/magic.lambda.image)
