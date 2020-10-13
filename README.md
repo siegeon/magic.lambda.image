@@ -1,8 +1,8 @@
 
 # Magic Lambda Image
 
-Image manipulation library for Magic, allowing you to do basic manipulation of images, in addition to
-generating QR codes.
+Image manipulation library for Magic, allowing you to do basic manipulation of images, in addition to generating
+QR codes.
 
 ## Generating a QR code
 
