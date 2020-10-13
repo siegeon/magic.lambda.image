@@ -30,21 +30,17 @@ namespace magic.lambda.image
             var size = input.Children.FirstOrDefault(x => x.Name == "size")?.GetEx<int>() ?? 4;
             using (var generator = new QRCodeGenerator())
             {
-                using (var qrData = generator.CreateQrCode(
-                    data,
-                    QRCodeGenerator.ECCLevel.Q))
+                using (var qrData = generator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q))
                 {
-                    using (var code = new QRCode(qrData))
+                    using (var code = new PngByteQRCode(qrData))
                     {
-                        using (var bmp = code.GetGraphic(size))
-                        {
-                            // Intentionally NOT disposing stream, it's anyways a MemoryStream
-                            var stream = new MemoryStream();
-                            bmp.Save(stream, ImageFormat.Png);
-                            stream.Flush();
-                            stream.Position = 0;
-                            input.Value = stream;
-                        }
+                        // Intentionally NOT disposing stream, it's anyways a MemoryStream
+                        var bytes = code.GetGraphic(size);
+                        var stream = new MemoryStream();
+                        stream.Write(bytes, 0, bytes.Length);
+                        stream.Flush();
+                        stream.Position = 0;
+                        input.Value = stream;
                     }
                 }
             }
