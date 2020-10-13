@@ -4,12 +4,12 @@
  */
 
 using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using magic.node;
 using magic.node.extensions;
-using magic.lambda.logging.helpers;
 
 namespace magic.lambda.image.tests
 {
@@ -18,6 +18,8 @@ namespace magic.lambda.image.tests
         [Fact]
         public void GenerateQrCode()
         {
+            var lambda = Common.Evaluate("qr.generate:foo-bar\r\n   size:4");
+            Assert.True(lambda.Children.First().Value is Stream);
         }
     }
 }

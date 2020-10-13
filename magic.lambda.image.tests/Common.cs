@@ -9,11 +9,9 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Moq;
 using magic.node;
 using magic.signals.services;
 using magic.signals.contracts;
-using magic.lambda.logging.helpers;
 using magic.node.extensions.hyperlambda;
 
 namespace magic.lambda.image.tests
