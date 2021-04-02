@@ -16,7 +16,7 @@ back as the response to the caller if you're in a web project of some sort using
 Below is an example of usage
 
 ```
-qr.generate:"https://reddit.com"
+qr.generate:"https://anarq.org"
    size:8
 ```
 
