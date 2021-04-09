@@ -2,11 +2,13 @@
 # Magic Lambda Image
 
 Image manipulation library for Magic, allowing you to do basic manipulation of images, in addition to generating
-QR codes.
+QR codes. More specifically this project contains the following slot.
+
+* __[qr.generate]__ - Generate a QR code with the specified payload
 
 ## Generating a QR code
 
-You can use the **[qr.generate]** slot to create a QR code. This slow returns the QR code as a `MemoryStream`, which
+You can use the **[qr.generate]** slot to create a QR code. This slot returns the QR code as a `MemoryStream`, which
 allows you to return its output directly over the HTTP response object, which again will persist the QR code
 back as the response to the caller if you're in a web project of some sort using Magic. The slot takes two arguments.
 
