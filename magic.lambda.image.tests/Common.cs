@@ -21,7 +21,7 @@ namespace magic.lambda.image.tests
         static public Node Evaluate(string hl)
         {
             var signaler = Initialize();
-            var lambda = new Parser(hl).Lambda();
+            var lambda = HyperlambdaParser.Parse(hl);
             signaler.Signal("eval", lambda);
             return lambda;
         }
