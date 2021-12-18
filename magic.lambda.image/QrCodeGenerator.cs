@@ -34,6 +34,8 @@ namespace magic.lambda.image
                     {
                         // Intentionally NOT disposing stream, it's anyways a MemoryStream
                         var bytes = code.GetGraphic(size);
+
+                        // Notice, we are NOT disposing stream, but simply returning it as a stream to caller.
                         var stream = new MemoryStream();
                         stream.Write(bytes, 0, bytes.Length);
                         stream.Flush();
